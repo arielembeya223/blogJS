@@ -1,0 +1,21 @@
+<%- include("../template/shared/header.ejs",{title:"bienvenue sur mon blog"})%>
+  <div class="container">
+    <form action="" method="post">
+       <label for="title">titre</label>
+       <input type="text" id="title" name="title">
+       <label for="content">titre</label>
+       <textarea  id="content" name="content" class="form-control"></textarea>
+       <button class="btn btn-primary">enregistrer</button>
+    </form>
+     <h1 class="my-5">bienvenue sur mon blog</h1>
+      <ul>
+        <div class="row row-cols-2">
+          <% for(const post of posts) {%>
+            <div class="col mb-3">
+            <%- include("./shared/post.ejs",{post})%>
+            </div>
+          <%}%>
+        </div>
+       </ul>
+  </div>
+<%- include("../template/shared/header.ejs")%>

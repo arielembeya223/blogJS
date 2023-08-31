@@ -1,0 +1,25 @@
+{
+  "name": "fastify-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/formbody": "^7.4.0",
+    "@fastify/static": "^6.10.2",
+    "@fastify/view": "^8.0.0",
+    "better-sqlite3": "^8.5.2",
+    "ejs": "^3.1.9",
+    "fastify": "^4.22.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

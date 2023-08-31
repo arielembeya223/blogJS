@@ -1,0 +1,7 @@
+<div class="card">
+   <div class="card-body">
+       <h5 class="card-title"><%=post.title%></h5>
+       <P class="card-text"><%=post.content.split("\n\n")[0].substring(0,150)%></P>
+       <a href="/article/<%=post.id%>">lire la suite</a>
+    </div>
+</div>
