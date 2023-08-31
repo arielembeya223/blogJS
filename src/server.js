@@ -18,7 +18,7 @@ app.register(fastifyStatic,{
   })
 app.register(fastifyFormBody)
 app.get("/",(req,res)=>{
-    const posts = db.prepare("SELECT * FROM posts").all()
+    const posts = db.prepare("SELECT * FROM posts ORDER BY created_at DESC").all()
     res.view("template/index.ejs",{
         posts
     })
@@ -28,6 +28,15 @@ app.get("/article/:id",(req,res)=>{
    res.view("template/single.ejs",{
     post
 })
+})
+app.post('/',(req,res)=>{
+    db.prepare("INSERT INTO posts (title,content,created_at) VALUES (?,?,?)")
+    .run([
+        req.body.title,
+        req.body.content,
+        Math.round(Date.now()/1000)
+    ])
+    res.redirect("/")
 })
 const start = async function(){
     try{
